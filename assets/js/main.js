@@ -1,129 +1,92 @@
 /* =========================================================
-   SENTRAL BYGG AS — interaksjon
+   SENTRAL BYGG AS — «SB.02» interaksjon
    ========================================================= */
 (function () {
   'use strict';
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---------- Hero intro ---------- */
-  var hero = document.getElementById('hero');
-  window.addEventListener('load', function () {
-    if (hero) requestAnimationFrame(function () { hero.classList.add('loaded'); });
-  });
-  // fallback if load already fired
-  if (document.readyState === 'complete' && hero) hero.classList.add('loaded');
-
-  /* ---------- Sticky nav (transparent over hero -> solid) ---------- */
+  /* ---------- Sticky nav ---------- */
   var nav = document.getElementById('nav');
   function onScroll() {
-    var threshold = (hero ? hero.offsetHeight : window.innerHeight) - 90;
-    if (window.scrollY > threshold) {
-      nav.classList.remove('nav--top');
-      nav.classList.add('nav--solid');
-    } else {
-      nav.classList.add('nav--top');
-      nav.classList.remove('nav--solid');
-    }
+    if (window.scrollY > 40) { nav.classList.add('nav--solid'); nav.classList.remove('nav--top'); }
+    else { nav.classList.remove('nav--solid'); nav.classList.add('nav--top'); }
   }
   window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll);
   onScroll();
 
   /* ---------- Mobile menu ---------- */
   var burger = document.getElementById('burger');
-  var menu = document.getElementById('mobileMenu');
+  var sheet = document.getElementById('msheet');
   function setMenu(open) {
-    menu.classList.toggle('open', open);
-    document.body.classList.toggle('menu-open', open);
+    sheet.classList.toggle('open', open);
+    document.body.classList.toggle('lock', open);
     burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+    sheet.setAttribute('aria-hidden', open ? 'false' : 'true');
     burger.setAttribute('aria-label', open ? 'Lukk meny' : 'Åpne meny');
-    // morph burger to X
-    var bars = burger.querySelectorAll('span');
-    if (bars.length === 2) {
-      bars[0].style.transform = open ? 'translateY(8px) rotate(45deg)' : '';
-      bars[1].style.transform = open ? 'translateY(-8px) rotate(-45deg)' : '';
-    }
+    var b = burger.querySelectorAll('span');
+    b[0].style.transform = open ? 'translateY(7px) rotate(45deg)' : '';
+    b[1].style.transform = open ? 'translateY(-7px) rotate(-45deg)' : '';
   }
-  if (burger) burger.addEventListener('click', function () { setMenu(!menu.classList.contains('open')); });
-  if (menu) menu.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () { setMenu(false); });
-  });
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && menu.classList.contains('open')) setMenu(false);
-  });
+  if (burger) burger.addEventListener('click', function () { setMenu(!sheet.classList.contains('open')); });
+  if (sheet) sheet.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && sheet.classList.contains('open')) setMenu(false); });
 
   /* ---------- Reveal on scroll ---------- */
-  var revealEls = document.querySelectorAll('.reveal, .reveal-img');
+  var revs = document.querySelectorAll('.rv, .rvimg');
   if ('IntersectionObserver' in window && !reduce) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-    revealEls.forEach(function (el) { io.observe(el); });
+    var io = new IntersectionObserver(function (ents) {
+      ents.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+    }, { threshold: 0.14, rootMargin: '0px 0px -7% 0px' });
+    revs.forEach(function (el) { io.observe(el); });
   } else {
-    revealEls.forEach(function (el) { el.classList.add('in'); });
+    revs.forEach(function (el) { el.classList.add('in'); });
   }
 
-  /* ---------- Services floating hover image ---------- */
-  var hoverBox = document.getElementById('svcHover');
-  var hoverImg = hoverBox ? hoverBox.querySelector('img') : null;
-  var svcs = document.querySelectorAll('.svc[data-img]');
-  var finePointer = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
-  if (hoverBox && finePointer) {
-    var curTargetX = 0, curTargetY = 0, curX = 0, curY = 0, rafActive = false;
-    function animate() {
-      curX += (curTargetX - curX) * 0.16;
-      curY += (curTargetY - curY) * 0.16;
-      hoverBox.style.left = curX + 'px';
-      hoverBox.style.top = curY + 'px';
-      if (rafActive) requestAnimationFrame(animate);
+  /* ---------- Subtle parallax on project images ---------- */
+  var px = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
+  if (px.length && !reduce && window.matchMedia('(min-width:821px)').matches) {
+    var ticking = false;
+    function frame() {
+      var vh = window.innerHeight;
+      px.forEach(function (img) {
+        var r = img.getBoundingClientRect();
+        if (r.bottom < 0 || r.top > vh) return;
+        var progress = (r.top + r.height / 2 - vh / 2) / vh; // -0.5..0.5-ish
+        img.style.transform = 'scale(1.08) translateY(' + (progress * -26).toFixed(1) + 'px)';
+      });
+      ticking = false;
     }
-    svcs.forEach(function (svc) {
-      svc.addEventListener('mouseenter', function () {
-        hoverImg.src = svc.getAttribute('data-img');
-        hoverBox.classList.add('show');
-        if (!rafActive) { rafActive = true; requestAnimationFrame(animate); }
-      });
-      svc.addEventListener('mousemove', function (e) {
-        curTargetX = e.clientX; curTargetY = e.clientY;
-        if (curX === 0 && curY === 0) { curX = e.clientX; curY = e.clientY; }
-      });
-      svc.addEventListener('mouseleave', function () {
-        hoverBox.classList.remove('show');
-        setTimeout(function () { rafActive = false; }, 350);
-      });
-    });
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(frame); }
+    }, { passive: true });
+    frame();
   }
+
+  /* ---------- Select: keep floating label up when chosen ---------- */
+  document.querySelectorAll('.fld select').forEach(function (sel) {
+    function sync() { sel.classList.toggle('filled', !!sel.value); }
+    sel.addEventListener('change', sync); sync();
+  });
 
   /* ---------- Contact form ---------- */
-  var form = document.getElementById('contactForm');
+  var form = document.getElementById('form');
   if (form) {
-    var wrap = form.closest('.form');
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var ok = true;
       form.querySelectorAll('[required]').forEach(function (input) {
-        var field = input.closest('.field');
         var val = (input.value || '').trim();
         var valid = !!val;
         if (input.type === 'email') valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
-        field.classList.toggle('invalid', !valid);
+        input.closest('.fld').classList.toggle('bad', !valid);
         if (!valid) ok = false;
       });
-      if (!ok) {
-        var firstBad = form.querySelector('.field.invalid input, .field.invalid select, .field.invalid textarea');
-        if (firstBad) firstBad.focus();
-        return;
-      }
-      wrap.classList.add('sent');
-      wrap.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+      if (!ok) { var b = form.querySelector('.fld.bad input, .fld.bad select, .fld.bad textarea'); if (b) b.focus(); return; }
+      form.classList.add('done');
+      form.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
     });
     form.querySelectorAll('[required]').forEach(function (input) {
-      input.addEventListener('input', function () {
-        input.closest('.field').classList.remove('invalid');
-      });
+      input.addEventListener('input', function () { input.closest('.fld').classList.remove('bad'); });
     });
   }
 
@@ -132,31 +95,4 @@
   if (toTop) toTop.addEventListener('click', function () {
     window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
   });
-
-  /* ---------- Custom cursor ---------- */
-  if (finePointer && !reduce) {
-    var dot = document.querySelector('.cursor');
-    var ring = document.querySelector('.cursor-ring');
-    var rx = 0, ry = 0, dx = 0, dy = 0;
-    document.addEventListener('mousemove', function (e) {
-      dx = e.clientX; dy = e.clientY;
-      dot.style.left = dx + 'px'; dot.style.top = dy + 'px';
-      document.body.classList.add('cursor-ready');
-    });
-    (function loop() {
-      rx += (dx - rx) * 0.18; ry += (dy - ry) * 0.18;
-      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-      requestAnimationFrame(loop);
-    })();
-    document.querySelectorAll('a, button, [data-cursor], input, select, textarea, .svc, .proj, .dcell').forEach(function (el) {
-      el.addEventListener('mouseenter', function () { document.body.classList.add('cursor-hover'); });
-      el.addEventListener('mouseleave', function () { document.body.classList.remove('cursor-hover'); });
-    });
-    // dark sections -> lighter ring
-    document.querySelectorAll('.hero, .about, .contact, .footer, .mobile-menu').forEach(function (sec) {
-      sec.addEventListener('mouseenter', function () { document.body.classList.add('cursor-dark'); });
-      sec.addEventListener('mouseleave', function () { document.body.classList.remove('cursor-dark'); });
-    });
-    document.addEventListener('mouseleave', function () { document.body.classList.remove('cursor-ready'); });
-  }
 })();

@@ -3,298 +3,330 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.className+=' js';</script>
 <title>Sentral Bygg AS — Byggmester på Haugalandet</title>
-<meta name="description" content="Sentral Bygg AS er en byggmester på Haugalandet. Fra nybygg og tilbygg til rehabilitering og oppussing – solid håndverk og gjennomtenkte løsninger.">
-<meta name="theme-color" content="#17150F">
-<meta property="og:title" content="Sentral Bygg AS — Bygg som tåler tiden">
-<meta property="og:description" content="Solid håndverk. Gjennomtenkte løsninger. Byggmester på Haugalandet.">
+<meta name="description" content="Sentral Bygg AS er byggmester på Haugalandet. Nybygg, tilbygg, rehabilitering og oppussing utført med presisjon, kvalitet og godt håndverk.">
+<meta name="theme-color" content="#19271F">
+<meta property="og:title" content="Sentral Bygg AS — Vi bygger for generasjoner">
+<meta property="og:description" content="Byggmester på Haugalandet. Nybygg · Rehabilitering · Tilbygg · Oppussing.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2317150F'/%3E%3Ctext x='16' y='22' font-family='Arial' font-size='16' font-weight='bold' fill='%23F4F0E9' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2319271F'/%3E%3Cpath d='M6 26V14L16 6l10 8v12' fill='none' stroke='%23C2924B' stroke-width='2.2'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/styles.css">
 </head>
-<body>
+<body id="top">
 
-<!-- custom cursor -->
-<div class="cursor" aria-hidden="true"></div>
-<div class="cursor-ring" aria-hidden="true"></div>
-
-<!-- ============ NAV ============ -->
+<!-- ================= NAV ================= -->
 <header class="nav nav--top" id="nav">
-  <div class="wrap">
-    <a href="#top" class="nav__logo" aria-label="Sentral Bygg AS – til toppen" data-cursor>
-      <b>SENTRAL BYGG AS</b>
-      <span>Byggmester · Haugalandet</span>
+  <div class="container">
+    <a href="#top" class="brand" aria-label="Sentral Bygg AS – til toppen">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32"><path d="M5 27V13.5L16 5l11 8.5V27" fill="none" stroke="currentColor" stroke-width="2.1"/><path d="M13 27v-6h6v6" fill="none" stroke="currentColor" stroke-width="2.1"/></svg>
+      </span>
+      <span class="brand__txt"><b>SENTRAL BYGG</b><span>Byggmester · Haugalandet</span></span>
     </a>
-    <nav class="nav__links" aria-label="Hovedmeny">
-      <a href="#prosjekter" data-cursor>Prosjekter</a>
-      <a href="#tjenester" data-cursor>Tjenester</a>
-      <a href="#om" data-cursor>Om oss</a>
-      <a href="#kontakt" data-cursor>Kontakt</a>
+    <nav class="nav__mid" aria-label="Hovedmeny">
+      <a href="#tjenester">Tjenester</a>
+      <a href="#prosjekter">Prosjekter</a>
+      <a href="#om">Om oss</a>
+      <a href="#kontakt">Kontakt</a>
     </nav>
-    <a href="#kontakt" class="nav__cta" data-cursor>Ta kontakt <span class="arw">→</span></a>
-    <button class="nav__burger" id="burger" aria-label="Åpne meny" aria-expanded="false" aria-controls="mobileMenu">
-      <span></span><span></span>
-    </button>
+    <a href="#kontakt" class="nav__cta">Be om tilbud <span class="a">→</span></a>
+    <button class="burger" id="burger" aria-label="Åpne meny" aria-expanded="false" aria-controls="msheet"><span></span><span></span></button>
   </div>
 </header>
 
-<!-- mobile menu -->
-<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-  <nav class="mobile-menu__inner" aria-label="Mobilmeny">
-    <a href="#prosjekter"><small>01</small>Prosjekter</a>
-    <a href="#tjenester"><small>02</small>Tjenester</a>
-    <a href="#om"><small>03</small>Om oss</a>
-    <a href="#kontakt"><small>04</small>Kontakt</a>
+<div class="msheet" id="msheet" aria-hidden="true">
+  <nav aria-label="Mobilmeny">
+    <a href="#tjenester"><i>01</i> Tjenester</a>
+    <a href="#prosjekter"><i>02</i> Prosjekter</a>
+    <a href="#om"><i>03</i> Om oss</a>
+    <a href="#kontakt"><i>04</i> Kontakt</a>
   </nav>
-  <div class="mobile-menu__foot">
+  <div class="msheet__foot">
     <a href="tel:+4795705600">+47 957 05 600</a>
     <a href="mailto:post@sentralbygg.no">post@sentralbygg.no</a>
     <span>Haugesund</span>
   </div>
 </div>
 
-<main id="top">
-
-  <!-- ============ HERO ============ -->
-  <section class="hero" id="hero">
-    <div class="hero__media">
-      <img src="assets/img/img_2165.jpg" alt="Moderne enebolig i mørk trekledning med store glassflater, terrasse og utsikt mot sjøen på Haugalandet" fetchpriority="high">
-    </div>
-    <div class="hero__meta">
-      Haugesund<br>Haugalandet<br><span style="color:var(--rust-2)">Byggmester</span>
-    </div>
-    <div class="wrap hero__inner">
-      <h1 class="hero-anim"><span class="r">Bygg som</span><br>tåler tiden.</h1>
-      <p class="hero__sub hero-anim">Solid håndverk. Gjennomtenkte løsninger.</p>
-      <p class="hero__text hero-anim">Fra nybygg og tilbygg til rehabilitering og oppussing – vi skaper løsninger med fokus på kvalitet, funksjon og godt håndverk.</p>
-      <div class="hero__cta hero-anim">
-        <a href="#prosjekter" class="btn btn--primary" data-cursor>Se våre prosjekter <span class="arw">→</span></a>
-        <a href="#kontakt" class="btn btn--ghost" data-cursor>Ta kontakt</a>
+<main>
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="container">
+      <p class="kicker rv">Byggmester · Haugalandet</p>
+      <div class="hero__type">
+        <h1 class="rv" data-d style="--d:.05s">Vi bygger for <em>generasjoner</em>.</h1>
       </div>
-    </div>
-    <div class="hero__scroll" aria-hidden="true"><span class="bar"></span>Scroll</div>
-  </section>
-
-  <!-- ============ STATEMENT ============ -->
-  <section class="statement">
-    <div class="wrap statement__grid">
-      <div class="statement__row">
-        <h2 class="reveal">Et godt bygg<br>starter med<br>gode valg.</h2>
-        <div class="statement__aside">
-          <p class="lead reveal" data-stagger style="--d:.08s">Vi tror på ærlig håndverk, tydelig kommunikasjon og løsninger som står seg over tid. Ikke det raskeste – det riktige.</p>
-          <dl class="statement__index reveal" data-stagger style="--d:.16s">
-            <div><dt>Kvalitet</dt><dd>Materialer og utførelse som varer.</dd></div>
-            <div><dt>Funksjon</dt><dd>Gjennomtenkt for hverdagen.</dd></div>
-            <div><dt>Lokalt</dt><dd>Forankret på Haugalandet.</dd></div>
-          </dl>
+      <div class="hero__meta">
+        <p class="hero__sub rv" data-d style="--d:.12s">Nybygg, tilbygg, rehabilitering og oppussing – utført med presisjon, gode materialer og et håndverk som skal stå seg i tiår, ikke år.</p>
+        <div class="hero__cta rv" data-d style="--d:.18s">
+          <a href="#prosjekter" class="btn btn--primary">Se prosjektene <span class="a">→</span></a>
+          <a href="#kontakt" class="btn btn--ghost">Snakk med oss</a>
         </div>
+      </div>
+
+      <div class="triptych">
+        <figure class="t1 rvimg" data-d style="--d:.05s">
+          <img src="assets/img/img_2166.jpg" alt="Moderne enebolig med mørk trekledning og store skyvedører mot flislagt uteplass" fetchpriority="high">
+          <figcaption>Enebolig · Haugalandet</figcaption>
+        </figure>
+        <figure class="t2 rvimg" data-d style="--d:.15s">
+          <img src="assets/img/img_2153.jpg" alt="Bærende limtresøyle i massivt treverk møter stålkonstruksjon" loading="lazy">
+          <figcaption>Konstruksjon i tre</figcaption>
+        </figure>
+        <figure class="t3 rvimg" data-d style="--d:.25s">
+          <img src="assets/img/img_2160.jpg" alt="Lyst interiør med store vindusflater og utsikt til trær og vann" loading="lazy">
+          <figcaption>Interiør</figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- ============ TJENESTER ============ -->
-  <section class="services" id="tjenester">
-    <div class="wrap">
-      <div class="sec-head">
-        <div>
-          <p class="eyebrow reveal">Hva vi gjør</p>
-          <h2 class="reveal" data-stagger style="--d:.06s">Tjenester</h2>
-        </div>
-        <p class="reveal" data-stagger style="--d:.12s">Et bredt fagfelt under ett tak – vi følger prosjektet fra første skisse til ferdig resultat.</p>
-      </div>
-
-      <div class="svc-list" id="svcList">
-        <a class="svc reveal" href="#kontakt" data-img="assets/img/img_2151.jpg" data-cursor>
-          <span class="svc__num">01</span>
-          <span class="svc__name">Nybygg</span>
-          <span class="svc__desc">Eneboliger og næringsbygg reist fra grunnen – solid konstruksjon i tre, stål og glass.</span>
-          <span class="svc__mediamob"><img src="assets/img/img_2151.jpg" alt="Nybygg i stål, tre og glass under oppføring" loading="lazy"></span>
-        </a>
-        <a class="svc reveal" href="#kontakt" data-img="assets/img/img_2150.jpg" data-cursor>
-          <span class="svc__num">02</span>
-          <span class="svc__name">Rehabilitering</span>
-          <span class="svc__desc">Vi gir eldre bygg nytt liv – med respekt for det opprinnelige og dagens krav til kvalitet.</span>
-          <span class="svc__mediamob"><img src="assets/img/img_2150.jpg" alt="Rehabilitering av eldre bygg med stillas i Haugesund sentrum" loading="lazy"></span>
-        </a>
-        <a class="svc reveal" href="#kontakt" data-img="assets/img/img_2167.jpg" data-cursor>
-          <span class="svc__num">03</span>
-          <span class="svc__name">Tilbygg &amp; påbygg</span>
-          <span class="svc__desc">Mer plass, bedre flyt og økt verdi – nye volum som spiller på lag med det eksisterende.</span>
-          <span class="svc__mediamob"><img src="assets/img/img_2167.jpg" alt="Moderne bolig med tilbygg i trekledning og balkong" loading="lazy"></span>
-        </a>
-        <a class="svc reveal" href="#kontakt" data-img="assets/img/img_2164.jpg" data-cursor>
-          <span class="svc__num">04</span>
-          <span class="svc__name">Oppussing</span>
-          <span class="svc__desc">Fra ett rom til hele boligen – gjennomført oppussing med øye for detaljer og finish.</span>
-          <span class="svc__mediamob"><img src="assets/img/img_2164.jpg" alt="Interiør under oppussing med synlig treverk og dagslys" loading="lazy"></span>
-        </a>
-      </div>
+  <!-- ================= MARQUEE ================= -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Nybygg<span></span></span><span>Rehabilitering</span><span>Tilbygg &amp; påbygg</span><span>Oppussing</span><span>Trehus</span><span>Tak &amp; fasade</span>
+      <span>Nybygg</span><span>Rehabilitering</span><span>Tilbygg &amp; påbygg</span><span>Oppussing</span><span>Trehus</span><span>Tak &amp; fasade</span>
     </div>
-  </section>
-  <div class="svc-hoverimg" id="svcHover" aria-hidden="true"><img src="" alt=""></div>
+  </div>
 
-  <!-- ============ PROSJEKTER ============ -->
-  <section class="projects" id="prosjekter">
-    <div class="wrap">
-      <div class="sec-head">
-        <div>
-          <p class="eyebrow reveal">Utvalgte prosjekter</p>
-          <h2 class="reveal" data-stagger style="--d:.06s">Utført arbeid</h2>
+  <!-- ================= FILOSOFI ================= -->
+  <section class="block">
+    <div class="container block__grid">
+      <div class="rail rv">
+        <span class="idx">01 — 05</span>
+        <h2>Filosofi</h2>
+        <p>Slik jobber vi, og hvorfor det vises igjen i resultatet.</p>
+        <div class="rail__line"></div>
+      </div>
+      <div class="philo">
+        <h3 class="rv serif">Et bygg skal tåle vær, tid og <em>hverdag</em> – lenge etter at vi har pakket sammen.</h3>
+        <p class="body-lg philo__p rv" data-d style="--d:.1s">Vi tar oppdrag der kvalitet betyr noe. Det starter med gode valg tidlig, fortsetter med ryddig gjennomføring, og ender med detaljer som tåler et nærmere blikk. Vi bygger som om vi selv skulle bodd der.</p>
+        <div class="philo__pts rv" data-d style="--d:.16s">
+          <div><h4>Ærlig håndverk</h4><p>Riktige materialer og løsninger som varer – ikke snarveier.</p></div>
+          <div><h4>Tett dialog</h4><p>Du vet hva som skjer, fra første befaring til overlevering.</p></div>
+          <div><h4>Lokalkjent</h4><p>God kjennskap til grunn, klima og byggeskikk på Haugalandet.</p></div>
         </div>
-        <p class="reveal" data-stagger style="--d:.12s">Et utvalg bygg og prosjekter som viser bredden i det vi leverer.</p>
-      </div>
-
-      <div class="proj-grid">
-        <a href="#kontakt" class="proj a reveal-img" data-cursor>
-          <span class="proj__tag">Nybygg</span>
-          <span class="proj__media"><img src="assets/img/img_2166.jpg" alt="Moderne enebolig med mørk trekledning, lyst trepanel og store skyvedører mot flislagt uteplass" loading="lazy"></span>
-          <span class="proj__cap"><h3><span class="place">Enebolig · Haugalandet</span>Bolig i tre og glass</h3><span class="arw">↗</span></span>
-        </a>
-        <a href="#kontakt" class="proj b reveal-img" data-cursor>
-          <span class="proj__tag">Bolig</span>
-          <span class="proj__media"><img src="assets/img/img_2167.jpg" alt="Enebolig i to plan med trekledning, balkong og betongsokkel" loading="lazy"></span>
-          <span class="proj__cap"><h3><span class="place">Enebolig</span>Bolig med utsikt</h3><span class="arw">↗</span></span>
-        </a>
-        <a href="#kontakt" class="proj c reveal-img" data-cursor>
-          <span class="proj__tag">Nybygg</span>
-          <span class="proj__media"><img src="assets/img/img_2151.jpg" alt="Bygg under oppføring i stål og limtre med store glassflater ved sjøen" loading="lazy"></span>
-          <span class="proj__cap"><h3><span class="place">Konstruksjon</span>Stål, tre og glass</h3><span class="arw">↗</span></span>
-        </a>
-        <a href="#kontakt" class="proj d reveal-img" data-cursor>
-          <span class="proj__tag">Rehabilitering</span>
-          <span class="proj__media"><img src="assets/img/img_2150.jpg" alt="Rehabilitering av eldre bygård med stillas og nytt tak i Haugesund sentrum" loading="lazy"></span>
-          <span class="proj__cap"><h3><span class="place">Haugesund sentrum</span>Rehabilitering</h3><span class="arw">↗</span></span>
-        </a>
-        <a href="#kontakt" class="proj e reveal-img" data-cursor>
-          <span class="proj__tag">Næringsbygg</span>
-          <span class="proj__media"><img src="assets/img/img_2155.jpg" alt="Ferdig næringsbygg – paviljong i svart stål og glass på tredekke" loading="lazy"></span>
-          <span class="proj__cap"><h3><span class="place">Næring</span>Paviljong i glass og stål</h3><span class="arw">↗</span></span>
-        </a>
-      </div>
-
-      <div class="projects__foot reveal">
-        <a href="#kontakt" class="btn btn--outline-ink" data-cursor>Fortell oss om prosjektet ditt <span class="arw">→</span></a>
       </div>
     </div>
   </section>
 
-  <!-- ============ OM OSS ============ -->
-  <section class="about" id="om">
-    <div class="wrap about__grid">
-      <div>
-        <p class="eyebrow on-dark reveal">Om oss</p>
-        <h2 class="reveal" data-stagger style="--d:.06s">Bygget på<br>godt håndverk.</h2>
-        <div class="about__body reveal" data-stagger style="--d:.12s">
-          <p>Sentral Bygg AS er en byggmester forankret på Haugalandet. Vi tar på oss alt fra nybygg og tilbygg til rehabilitering og oppussing – og setter en ære i å levere arbeid vi kan stå inne for.</p>
-          <p>For oss handler et godt bygg like mye om prosessen som om resultatet: tydelige avklaringer, ryddige byggeplasser og en fagmann du kan ha en ærlig prat med hele veien.</p>
-        </div>
-        <div class="about__principles reveal" data-stagger style="--d:.18s">
-          <div><h4>Fagfolk</h4><p>Erfarne håndverkere som tar eierskap til hvert prosjekt.</p></div>
-          <div><h4>Tett dialog</h4><p>Du vet hva som skjer – fra oppstart til overlevering.</p></div>
-          <div><h4>Kvalitet i alle ledd</h4><p>Riktige materialer og løsninger som varer.</p></div>
-          <div><h4>Lokalkjent</h4><p>God kjennskap til grunn, klima og byggeskikk i regionen.</p></div>
-        </div>
+  <!-- ================= TJENESTER ================= -->
+  <section class="block" id="tjenester" style="padding-top:0">
+    <div class="container block__grid">
+      <div class="rail rv">
+        <span class="idx">02 — 05</span>
+        <h2>Tjenester</h2>
+        <p>Et bredt fagfelt under ett tak – vi følger prosjektet hele veien.</p>
+        <div class="rail__line"></div>
       </div>
-      <figure class="about__media reveal" data-stagger style="--d:.1s">
-        <div class="m1"><img src="assets/img/img_2162.jpg" alt="Sentral Bygg AS sin firmabil parkert ved et prosjekt en frostmorgen på Haugalandet" loading="lazy"></div>
-        <figcaption>På vei til prosjekt · Haugesund</figcaption>
-        <div class="badge">
-          <b>Lokalt forankret</b>
-          <span>Byggmester på Haugalandet</span>
-        </div>
-      </figure>
+      <div class="tiles">
+        <a class="tile rv" href="#kontakt" data-d style="--d:0s">
+          <img src="assets/img/img_2167.jpg" alt="Nybygd enebolig i to plan med trekledning og balkong" loading="lazy">
+          <span class="tile__num">01</span><span class="tile__ico" aria-hidden="true">→</span>
+          <span class="tile__in"><h3>Nybygg</h3><p>Eneboliger og næringsbygg reist fra grunnen – solid konstruksjon i tre, stål og glass.</p></span>
+        </a>
+        <a class="tile rv" href="#kontakt" data-d style="--d:.08s">
+          <img src="assets/img/img_2150.jpg" alt="Rehabilitering av eldre bygg med stillas i Haugesund sentrum" loading="lazy">
+          <span class="tile__num">02</span><span class="tile__ico" aria-hidden="true">→</span>
+          <span class="tile__in"><h3>Rehabilitering</h3><p>Vi gir eldre bygg nytt liv – med respekt for det opprinnelige og dagens krav.</p></span>
+        </a>
+        <a class="tile rv" href="#kontakt" data-d style="--d:.04s">
+          <img src="assets/img/img_2156.jpg" alt="Enebolig med tilbygg på en høyde i landlige omgivelser" loading="lazy">
+          <span class="tile__num">03</span><span class="tile__ico" aria-hidden="true">→</span>
+          <span class="tile__in"><h3>Tilbygg &amp; påbygg</h3><p>Mer plass, bedre flyt og økt verdi – nye volum som spiller på lag med det eksisterende.</p></span>
+        </a>
+        <a class="tile rv" href="#kontakt" data-d style="--d:.12s">
+          <img src="assets/img/img_2164.jpg" alt="Interiør under oppussing med synlig treverk og dagslys" loading="lazy">
+          <span class="tile__num">04</span><span class="tile__ico" aria-hidden="true">→</span>
+          <span class="tile__in"><h3>Oppussing</h3><p>Fra ett rom til hele boligen – gjennomført oppussing med øye for detaljer og finish.</p></span>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- ============ DETALJER ============ -->
+  <!-- ================= PROSJEKTER ================= -->
+  <section class="block" id="prosjekter" style="padding-top:0">
+    <div class="container block__grid">
+      <div class="rail rv">
+        <span class="idx">03 — 05</span>
+        <h2>Utvalgte prosjekter</h2>
+        <p>Et utvalg som viser bredden i det vi leverer.</p>
+        <div class="rail__line"></div>
+      </div>
+      <div class="cases">
+        <article class="case">
+          <div class="case__media rvimg"><img src="assets/img/img_2165.jpg" alt="Ferdig enebolig i mørk og lys trekledning med store glassflater, terrasse og hage" loading="lazy" data-parallax></div>
+          <div class="case__card rv">
+            <span class="case__tag">Nybygg · Bolig</span>
+            <h3>Enebolig i tre og glass</h3>
+            <p class="case__place">Haugalandet</p>
+            <p>En moderne enebolig med varme materialer, god kontakt mellom ute og inne, og løsninger tilpasset tomt og lysforhold.</p>
+            <a href="#kontakt" class="case__link">Fortell oss om ditt prosjekt <span class="a">→</span></a>
+          </div>
+        </article>
+
+        <article class="case case--rev">
+          <div class="case__media rvimg"><img src="assets/img/img_2151.jpg" alt="Bygg under oppføring i stål og limtre med store glassflater ved sjøen" loading="lazy" data-parallax></div>
+          <div class="case__card rv">
+            <span class="case__tag">Nybygg · Konstruksjon</span>
+            <h3>Nybygg i stål og limtre</h3>
+            <p class="case__place">Sjøfront</p>
+            <p>Robust bæresystem i stål og limtre som åpner for store spenn og generøse vindusflater mot sjøen.</p>
+            <a href="#kontakt" class="case__link">Fortell oss om ditt prosjekt <span class="a">→</span></a>
+          </div>
+        </article>
+
+        <article class="case">
+          <div class="case__media rvimg"><img src="assets/img/img_2155.jpg" alt="Ferdig næringsbygg – paviljong i svart stål og glass på tredekke" loading="lazy" data-parallax></div>
+          <div class="case__card rv">
+            <span class="case__tag">Næringsbygg</span>
+            <h3>Paviljong i glass og stål</h3>
+            <p class="case__place">Haugalandet</p>
+            <p>Et lett og transparent næringsbygg der presis detaljering i stål og glass gir et rent og tidløst uttrykk.</p>
+            <a href="#kontakt" class="case__link">Fortell oss om ditt prosjekt <span class="a">→</span></a>
+          </div>
+        </article>
+
+        <article class="case case--rev">
+          <div class="case__media rvimg"><img src="assets/img/img_2154.jpg" alt="Overbygg i stål og glass under oppføring i Haugesund sentrum med utsikt over byen" loading="lazy" data-parallax></div>
+          <div class="case__card rv">
+            <span class="case__tag">Offentlig rom</span>
+            <h3>Overbygg i sentrum</h3>
+            <p class="case__place">Haugesund sentrum</p>
+            <p>Konstruksjon for uterom midt i byen – der bæreevne, vær og estetikk måtte spille sammen på liten plass.</p>
+            <a href="#kontakt" class="case__link">Fortell oss om ditt prosjekt <span class="a">→</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DETALJER (marquee) ================= -->
   <section class="details">
-    <div class="wrap">
+    <div class="container">
       <div class="details__head">
-        <p class="eyebrow reveal">Håndverket</p>
-        <h2 class="reveal" data-stagger style="--d:.06s">Detaljene<br>betyr noe.</h2>
-        <p class="lead reveal" data-stagger style="--d:.12s">Godt håndverk handler om mer enn det du ser ved første øyekast – det ligger i sammenføyningene, materialvalgene og finishen.</p>
+        <h2 class="rv serif">Kvaliteten ligger i <em style="font-style:italic;color:var(--brass)">detaljene</em>.</h2>
+        <p class="rv" data-d style="--d:.1s">Godt håndverk handler om mer enn det du ser ved første øyekast – det ligger i sammenføyningene, materialvalgene og finishen.</p>
       </div>
-      <div class="details__gal">
-        <figure class="dcell big reveal-img"><img src="assets/img/img_2153.jpg" alt="Bærende limtresøyle i massivt treverk møter stålkonstruksjon" loading="lazy">
-          <figcaption class="dcell__meta"><span>Konstruksjon</span><span>Tre &amp; stål</span></figcaption></figure>
-        <figure class="dcell wide reveal-img"><img src="assets/img/img_2148.jpg" alt="Detalj av nytt tak med takstein og pipe over hustakene i byen" loading="lazy">
-          <figcaption class="dcell__meta"><span>Tak</span><span>Tekking</span></figcaption></figure>
-        <figure class="dcell sm reveal-img"><img src="assets/img/img_2160.jpg" alt="Interiør med store vindusflater og utsikt til trær og vann" loading="lazy">
-          <figcaption class="dcell__meta"><span>Interiør</span><span>Lys</span></figcaption></figure>
-        <figure class="dcell sm reveal-img"><img src="assets/img/img_2147.jpg" alt="Nytt taklekt og sløyfer under arbeid med utsikt over byen" loading="lazy">
-          <figcaption class="dcell__meta"><span>Tak</span><span>Lekting</span></figcaption></figure>
-        <figure class="dcell wide reveal-img"><img src="assets/img/img_2142.jpg" alt="Takarbeid over hustakene med utsikt mot sjøen i Haugesund" loading="lazy">
-          <figcaption class="dcell__meta"><span>Rehabilitering</span><span>Haugesund</span></figcaption></figure>
+    </div>
+    <div class="gal-wrap">
+      <div class="gal">
+        <figure><img src="assets/img/img_2148.jpg" alt="Detalj av nytt tak med takstein og pipe" loading="lazy"><figcaption>Tak</figcaption></figure>
+        <figure><img src="assets/img/img_2147.jpg" alt="Nytt taklekt og sløyfer under arbeid" loading="lazy"><figcaption>Lekting</figcaption></figure>
+        <figure><img src="assets/img/img_2158.jpg" alt="Stålkonstruksjon under oppføring med kran" loading="lazy"><figcaption>Konstruksjon</figcaption></figure>
+        <figure><img src="assets/img/img_2163.jpg" alt="Interiør under rehabilitering med synlig treverk" loading="lazy"><figcaption>Rehabilitering</figcaption></figure>
+        <figure><img src="assets/img/img_2159.jpg" alt="Fagfolk i arbeid med kran og løft på byggeplass" loading="lazy"><figcaption>På plassen</figcaption></figure>
+        <figure><img src="assets/img/img_2142.jpg" alt="Takarbeid over hustakene med utsikt mot sjøen" loading="lazy"><figcaption>Tak &amp; fasade</figcaption></figure>
+        <figure><img src="assets/img/img_2153.jpg" alt="Bærende limtresøyle møter stål" loading="lazy"><figcaption>Materialer</figcaption></figure>
+        <!-- duplicate set for seamless loop -->
+        <figure aria-hidden="true"><img src="assets/img/img_2148.jpg" alt="" loading="lazy"><figcaption>Tak</figcaption></figure>
+        <figure aria-hidden="true"><img src="assets/img/img_2147.jpg" alt="" loading="lazy"><figcaption>Lekting</figcaption></figure>
+        <figure aria-hidden="true"><img src="assets/img/img_2158.jpg" alt="" loading="lazy"><figcaption>Konstruksjon</figcaption></figure>
+        <figure aria-hidden="true"><img src="assets/img/img_2163.jpg" alt="" loading="lazy"><figcaption>Rehabilitering</figcaption></figure>
+        <figure aria-hidden="true"><img src="assets/img/img_2159.jpg" alt="" loading="lazy"><figcaption>På plassen</figcaption></figure>
+        <figure aria-hidden="true"><img src="assets/img/img_2142.jpg" alt="" loading="lazy"><figcaption>Tak &amp; fasade</figcaption></figure>
+        <figure aria-hidden="true"><img src="assets/img/img_2153.jpg" alt="" loading="lazy"><figcaption>Materialer</figcaption></figure>
       </div>
     </div>
   </section>
 
-  <!-- ============ KONTAKT ============ -->
-  <section class="contact" id="kontakt">
-    <div class="wrap contact__grid">
+  <!-- ================= OM OSS ================= -->
+  <section class="block" id="om">
+    <div class="container block__grid">
+      <div class="rail rv">
+        <span class="idx">04 — 05</span>
+        <h2>Om oss</h2>
+        <p>En byggmester du kan ha en ærlig prat med.</p>
+        <div class="rail__line"></div>
+      </div>
       <div>
-        <p class="eyebrow on-dark reveal">Kontakt</p>
-        <h2 class="reveal" data-stagger style="--d:.06s">Har du et<br>byggeprosjekt<br>i tankene?</h2>
-        <p class="contact__sub reveal" data-stagger style="--d:.12s">Fortell oss litt om prosjektet ditt, så tar vi en prat om veien videre – helt uforpliktende.</p>
-        <div class="contact__info reveal" data-stagger style="--d:.18s">
-          <a href="tel:+4795705600" data-cursor><span class="k">Telefon</span><span class="v">+47 957 05 600</span></a>
-          <a href="mailto:post@sentralbygg.no" data-cursor><span class="k">E-post</span><span class="v">post@sentralbygg.no</span></a>
-          <a href="#om" data-cursor><span class="k">Sted</span><span class="v">Haugesund · Haugalandet</span></a>
+        <p class="about__quote rv serif">Bygget på <em>godt håndverk</em> – og et ord som holder.</p>
+        <div class="about__grid">
+          <div class="about__body rv" data-d style="--d:.1s">
+            <p class="body-lg">Sentral Bygg AS er en byggmester forankret på Haugalandet. Vi tar på oss alt fra nybygg og tilbygg til rehabilitering og oppussing – og setter en ære i å levere arbeid vi kan stå inne for.</p>
+            <p class="body-lg">For oss handler et godt bygg like mye om prosessen som om resultatet: tydelige avklaringer, ryddige byggeplasser og en fagmann som er til å stole på hele veien.</p>
+            <div class="about__vals">
+              <div><h4>Fagfolk</h4><p>Erfarne håndverkere som tar eierskap til hvert oppdrag.</p></div>
+              <div><h4>Kvalitet i alle ledd</h4><p>Fra bæresystem til listverk – utført med omtanke.</p></div>
+              <div><h4>Ryddig gjennomføring</h4><p>Fremdrift og orden du legger merke til.</p></div>
+              <div><h4>Uforpliktende prat</h4><p>Ta kontakt, så finner vi ut av veien videre sammen.</p></div>
+            </div>
+          </div>
+          <figure class="about__media rv" data-d style="--d:.14s; margin:0">
+            <img src="assets/img/img_2162.jpg" alt="Sentral Bygg AS sin firmabil parkert ved et prosjekt en frostmorgen på Haugalandet" loading="lazy">
+            <figcaption class="cap">På vei til prosjekt · Haugesund</figcaption>
+          </figure>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="form reveal" data-stagger style="--d:.1s">
-        <form class="form__inner" id="contactForm" novalidate>
-          <div class="form__row">
-            <div class="field">
-              <label for="f-navn">Navn</label>
-              <input id="f-navn" name="navn" type="text" placeholder="Ditt navn" required data-cursor>
+  <!-- ================= KONTAKT ================= -->
+  <section class="contact" id="kontakt">
+    <div class="container">
+      <div class="contact__head">
+        <p class="kicker kicker--plain">05 — Kontakt</p>
+        <h2>La oss bygge noe som <em>varer</em>.</h2>
+      </div>
+      <p class="contact__sub">Fortell oss litt om prosjektet ditt, så tar vi en uforpliktende prat om veien videre.</p>
+
+      <div class="contact__wrap">
+        <form class="form" id="form" novalidate>
+          <div class="form__body">
+            <div class="form__row">
+              <div class="fld">
+                <input id="c-navn" name="navn" type="text" placeholder=" " required>
+                <label for="c-navn">Navn</label>
+              </div>
+              <div class="fld">
+                <input id="c-tlf" name="telefon" type="tel" placeholder=" " required>
+                <label for="c-tlf">Telefon</label>
+              </div>
             </div>
-            <div class="field">
-              <label for="f-tlf">Telefon</label>
-              <input id="f-tlf" name="telefon" type="tel" placeholder="Ditt telefonnummer" required data-cursor>
+            <div class="fld">
+              <input id="c-epost" name="epost" type="email" placeholder=" " required>
+              <label for="c-epost">E-post</label>
             </div>
+            <div class="fld">
+              <select id="c-type" name="type" required>
+                <option value="" selected hidden></option>
+                <option>Nybygg</option><option>Rehabilitering</option><option>Tilbygg &amp; påbygg</option><option>Oppussing</option><option>Annet / usikker</option>
+              </select>
+              <label for="c-type">Hva gjelder henvendelsen?</label>
+              <span class="chev" aria-hidden="true">▾</span>
+            </div>
+            <div class="fld">
+              <textarea id="c-melding" name="melding" placeholder=" " required></textarea>
+              <label for="c-melding">Melding</label>
+            </div>
+            <button type="submit" class="btn form__submit">Send forespørsel <span class="a">→</span></button>
+            <p class="form__note">Vi svarer normalt innen kort tid på hverdager. Skjemaet sendes ikke fra denne demoen.</p>
           </div>
-          <div class="field">
-            <label for="f-epost">E-post</label>
-            <input id="f-epost" name="epost" type="email" placeholder="din@epost.no" required data-cursor>
+          <div class="form__ok" role="status">
+            <div class="m" aria-hidden="true">✓</div>
+            <h3>Takk for henvendelsen!</h3>
+            <p>Vi har mottatt forespørselen din og tar kontakt så snart vi kan.</p>
           </div>
-          <div class="field">
-            <label for="f-type">Hva gjelder henvendelsen?</label>
-            <select id="f-type" name="type" required data-cursor>
-              <option value="" disabled selected>Velg type prosjekt</option>
-              <option>Nybygg</option>
-              <option>Rehabilitering</option>
-              <option>Tilbygg &amp; påbygg</option>
-              <option>Oppussing</option>
-              <option>Annet / usikker</option>
-            </select>
-            <span class="sel-arw">↓</span>
-          </div>
-          <div class="field">
-            <label for="f-melding">Melding</label>
-            <textarea id="f-melding" name="melding" placeholder="Fortell kort om prosjektet, ønsket tidsrom og sted." required data-cursor></textarea>
-          </div>
-          <button type="submit" class="btn btn--primary form__submit" data-cursor>Send forespørsel <span class="arw">→</span></button>
-          <p class="form__note">Vi svarer normalt innen kort tid på hverdager. Feltene sendes ikke fra denne demoen.</p>
         </form>
-        <div class="form__success" role="status">
-          <div class="mark">✓</div>
-          <h3>Takk for henvendelsen!</h3>
-          <p>Vi har mottatt forespørselen din og tar kontakt så snart vi kan.</p>
+
+        <div class="form__meta">
+          <a href="tel:+4795705600"><span class="k">Telefon</span>+47 957 05 600</a>
+          <a href="mailto:post@sentralbygg.no"><span class="k">E-post</span>post@sentralbygg.no</a>
+          <span><span class="k">Sted</span>Haugesund · Haugalandet</span>
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<!-- ============ FOOTER ============ -->
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
-  <div class="wrap">
-    <div class="footer__top">
+  <div class="container">
+    <div class="footer__grid">
       <div class="footer__brand">
         <b>SENTRAL BYGG AS</b>
         <span>Byggmester · Haugalandet</span>
@@ -302,21 +334,22 @@
       </div>
       <div class="footer__col">
         <h5>Meny</h5>
-        <a href="#prosjekter" data-cursor>Prosjekter</a>
-        <a href="#tjenester" data-cursor>Tjenester</a>
-        <a href="#om" data-cursor>Om oss</a>
-        <a href="#kontakt" data-cursor>Kontakt</a>
+        <a href="#tjenester">Tjenester</a>
+        <a href="#prosjekter">Prosjekter</a>
+        <a href="#om">Om oss</a>
+        <a href="#kontakt">Kontakt</a>
       </div>
       <div class="footer__col">
         <h5>Kontakt</h5>
-        <a href="tel:+4795705600" data-cursor>+47 957 05 600</a>
-        <a href="mailto:post@sentralbygg.no" data-cursor>post@sentralbygg.no</a>
-        <a href="#om" data-cursor>Haugesund</a>
+        <a href="tel:+4795705600">+47 957 05 600</a>
+        <a href="mailto:post@sentralbygg.no">post@sentralbygg.no</a>
+        <a href="#om">Haugesund</a>
       </div>
     </div>
+    <div class="footer__big" aria-hidden="true">Sentral Bygg</div>
     <div class="footer__bottom">
       <span>© 2026 Sentral Bygg AS. Alle rettigheter forbeholdt.</span>
-      <span class="top-link" id="toTop" data-cursor>Til toppen <span aria-hidden="true">↑</span></span>
+      <span class="up" id="toTop">Til toppen <span aria-hidden="true">↑</span></span>
     </div>
   </div>
 </footer>

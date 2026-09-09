@@ -31,15 +31,40 @@
   if (sheet) sheet.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && sheet.classList.contains('open')) setMenu(false); });
 
-  /* ---------- Reveal on scroll ---------- */
-  var revs = document.querySelectorAll('.rv, .rvimg');
-  if ('IntersectionObserver' in window && !reduce) {
-    var io = new IntersectionObserver(function (ents) {
-      ents.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-    }, { threshold: 0.14, rootMargin: '0px 0px -7% 0px' });
-    revs.forEach(function (el) { io.observe(el); });
+  /* ---------- Reveal on scroll ----------
+     A viewport sweep is the primary mechanism (reliable for large media, where
+     IntersectionObserver on clip-path elements proved flaky). rAF-scheduled so
+     rects are always current; multiple post-load passes catch late layout. */
+  var revs = Array.prototype.slice.call(document.querySelectorAll('.rv, .rvimg'));
+  var reveal = function (el) { el.classList.add('in'); };
+  if (reduce) {
+    revs.forEach(reveal);
   } else {
-    revs.forEach(function (el) { el.classList.add('in'); });
+    // Viewport sweep — reveals anything whose top is within (or above) the lower
+    // 90% of the viewport, so nothing can stay hidden once reached or passed.
+    var sweep = function () {
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      for (var i = revs.length - 1; i >= 0; i--) {
+        if (revs[i].getBoundingClientRect().top < vh * 0.9) { reveal(revs[i]); revs.splice(i, 1); }
+      }
+    };
+    var scheduled = false;
+    var schedule = function () {
+      if (scheduled) return; scheduled = true;
+      requestAnimationFrame(function () { scheduled = false; sweep(); });
+    };
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+    window.addEventListener('load', schedule);
+    // IntersectionObserver as an additional trigger for elements entering on scroll.
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (ents) {
+        ents.forEach(function (en) { if (en.isIntersecting) { reveal(en.target); io.unobserve(en.target); } });
+      }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+      revs.forEach(function (el) { io.observe(el); });
+    }
+    // Initial + post-load passes catch whatever is already in view (any landing point).
+    [0, 150, 400, 800, 1500, 2500].forEach(function (t) { setTimeout(sweep, t); });
   }
 
   /* ---------- Subtle parallax on project images ---------- */
